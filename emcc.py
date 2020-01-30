@@ -478,7 +478,7 @@ def is_ar_file_with_missing_index(archive_file):
   archive_header = b'!<arch>\n'
   file_header_size = 60
 
-  with open(archive_file) as f:
+  with open(archive_file, 'rb') as f:
     header = f.read(len(archive_header))
     if header != archive_header:
       # This is not even an ar file
